@@ -24,7 +24,7 @@ function searchResults(
       return {
         ...state,
         isFetching: false,
-        rovers: action.payload,
+        searchResults: action.payload,
         error: null,
       };
     case SEARCH_REJECTED:
