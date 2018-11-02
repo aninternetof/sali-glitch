@@ -39,15 +39,16 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <h1>Is a </h1>
+        <h1>Is </h1>
         <input className="input" type="text" value={this.props.router.location.pathname.substring(1)} onChange={this.handleChange} />
         <h1>high in salicylates?</h1>
         <div className="results">
           <table>
             <tbody>
-              {this.props.searchResults.results.map((result) =>
+              {this.props.searchResults.results.map((result, count) =>
                 <tr key={Math.random()}>
-                  <td className={"rating"+result.rating}>
+                  {let classes = `rating${result.rating} result${count}`}
+                  <td className=`{"rating"+result.rating}`>
                     {this.ratingToText(result.rating)}
                   </td>    
                   <td>
