@@ -7,14 +7,14 @@ import { push } from 'connected-react-router'
 
 class App extends Component {
   
-  handleClick(event) {
-     this.props.navigate('/home');
-  }
-  
   render() {
+    if (this.state.toDashboard === true) {
+          return <Redirect to='/dashboard' />
+    }
     return (
       <div>
         <button onClick={this.props.setTest} >console.log(actions);</button>
+        <button onClick={() => {this.props.navigate('/home')}} >Go</button>
         <button onClick={() => {this.props.navigate('/home')}} >Go</button>
         <Link to="/about">About</Link>
       </div>
