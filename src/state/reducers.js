@@ -8,7 +8,7 @@ import {
 
 function searchResults(
   state = {
-    searchResults: null,
+    results: null,
     isFetching: false,
     error: null,
   },
@@ -24,7 +24,7 @@ function searchResults(
       return {
         ...state,
         isFetching: false,
-        searchResults: action.payload,
+        results: action.payload,
         error: null,
       };
     case SEARCH_REJECTED:

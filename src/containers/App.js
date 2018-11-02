@@ -13,11 +13,12 @@ class App extends Component {
   }
   
   componentDidMount() {
-    const { search } = this.props;
-    search();
+
   }
   
   handleChange(event) {
+    const { search } = this.props;
+    search(event.target.value);
     this.props.history.push('/' + event.target.value)
   }
   
