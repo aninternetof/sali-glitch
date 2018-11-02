@@ -1,6 +1,9 @@
 import axios from 'axios';
 
-const SEARCH = 'SEARCH';
+export const SEARCH = 'SEARCH';
+export const SEARCH_PENDING = `$(SEARCH)_PENDING`;
+export const SEARCH_FULFILLED = `$(SEARCH)_FULFILLED`;
+export const SEARCH_REJECTED = `$(SEARCH)_REJECTED`;
 
 export const search = xhrOptions => ({
   type: SEARCH,

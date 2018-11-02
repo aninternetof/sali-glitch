@@ -1,23 +1,39 @@
-import { combineReducers } from "redux";
-import actions from "./actions";
+import {
+  SEARCH,
+  SEARCH_PENDING,
+  SEARCH_FULFILLED,
+  SEARCH_REJECTED,
+} from './actions';
 
-const initialState = {
-  initial: false, // initial onboarding is not shown yet
-};
-
-const settings = (state = initialState, action) => {
+export default function (
+  state = {
+    searchResults: null,
+    isFetching: false,
+    error: null,
+  },
+  action,
+) {
   switch (action.type) {
-    case actions.S: {
-      const newState = { a: 1 };
-      console.log('!!!!!!!', newState);
-      return newState;
-    }
+    case SEARCH_PENDING:
+      return {
+        ...state,
+        isFetching: true,
+      };
+    case SEARCH_FULFILLED:
+      return {
+        ...state,
+        isFetching: false,
+        rovers: action.payload,
+        error: null,
+      };
+    case SEARCH_REJECTED:
+      return {
+        ...state,
+        isFetching: false,
+        error: action.payload,
+      };
     default:
       return state;
   }
-};
-
-export {
-  settings
-};
+}
 
