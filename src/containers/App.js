@@ -9,19 +9,17 @@ class App extends Component {
   
   constructor(props){
     super(props);
-    console.log("in constructor");
-    this.state = { toDashboard: false };
+    this.handleChange = this.handleChange.bind(this);
+  }
+  
+  handleChange(event) {
+    this.props.history.push('/' + event.target.value)
   }
   
   render() {
-    if (this.state.toDashboard === true) {
-          this.setState(() => ({toDashboard: false}));
-          return <Redirect to={'/something'} />
-    }
     return (
       <div>
-        <h1>{this.props.router.location.pathname}</h1>
-        <button onClick={() => {this.setState(() => ({toDashboard: true}))}}>Redirect</button>
+        <input type="text" value={this.props.router.location.pathname.substring(1)} onChange={this.handleChange} />
       </div>
     );
   }
