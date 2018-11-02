@@ -47,7 +47,7 @@ class App extends Component {
             <tbody>
               {this.props.searchResults.results.map((result) =>
                 <tr key={Math.random()}>
-                  <td className="rating`${result.rating}`">
+                  <td className={"rating"+result.rating}>
                     {this.ratingToText(result.rating)}
                   </td>    
                   <td>

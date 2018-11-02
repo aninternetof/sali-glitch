@@ -16,6 +16,26 @@ td {
   padding: 10px;
 }
 
-rating0, rating1 {
+.rating0, .rating1 {
+  background-color: wheat; 
+}
+
+.rating1, .rating2 {
   background-color: green; 
+}
+
+.rating3, .rating4 {
+  background-color: yellow; 
+}
+
+.rating5, .rating6 {
+  background-color: orange; 
+}
+
+.rating7, .rating8 {
+  background-color: red; 
+}
+
+.rating9, .rating10 {
+  background-color: fuchsia; 
 }
