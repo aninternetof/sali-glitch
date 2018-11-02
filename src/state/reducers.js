@@ -8,7 +8,7 @@ import {
 
 function searchResults(
   state = {
-    results: null,
+    results: [],
     isFetching: false,
     error: null,
   },

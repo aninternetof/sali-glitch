@@ -26,6 +26,13 @@ class App extends Component {
     return (
       <div>
         <input type="text" value={this.props.router.location.pathname.substring(1)} onChange={this.handleChange} />
+        <ul>
+          {this.props.searchResults.results.map((result) =>
+            <li key={result.name + result.score + result. }>
+              {result.name}
+            </li>
+          )}
+    </ul>
       </div>
     );
   }
