@@ -1,11 +1,12 @@
+import { combineReducers } from 'redux';
+
 import {
-  SEARCH,
   SEARCH_PENDING,
   SEARCH_FULFILLED,
   SEARCH_REJECTED,
 } from './actions';
 
-export default function (
+function searchResults(
   state = {
     searchResults: null,
     isFetching: false,
@@ -36,4 +37,8 @@ export default function (
       return state;
   }
 }
+
+export default combineReducers({
+  searchResults,
+});
 

@@ -12,7 +12,7 @@ import { connectRouter, routerMiddleware } from 'connected-react-router'
 
 import './index.css';
 import App from './containers/App';
-import { settings } from './state/reducers';
+import rootReducer from './state/reducers';
 
 /* eslint-disable-next-line no-underscore-dangle */
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -29,7 +29,7 @@ const preloadedState = {
 const history = createBrowserHistory()
 
 const store = createStore(
-  connectRouter(history)(settings),
+  connectRouter(history)(rootReducer),
   preloadedState,
   reduxMiddleware
 );
