@@ -12,11 +12,11 @@ class App extends Component {
     console.log("in constructor");
     this.state = { toDashboard: false };
   }
-
+  
   render() {
     if (this.state.toDashboard === true) {
           this.setState(() => ({toDashboard: false}));
-          return <Redirect to='/dashboard' />
+          return <Redirect to={'/something'} />
     }
     return (
       <div>
