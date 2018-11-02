@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { search } from '../state/actions';
-import { Link, Redirect } from 'react-router-dom'
 import { push } from 'connected-react-router'
 
 class App extends Component {
@@ -40,8 +39,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        
+        <h1>Is a </h1>
         <input type="text" value={this.props.router.location.pathname.substring(1)} onChange={this.handleChange} />
+        <h1>high in salicylates?</h1>
         <ul>
           {this.props.searchResults.results.map((result) =>
             <li key={Math.random()}>

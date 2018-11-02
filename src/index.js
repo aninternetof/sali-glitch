@@ -8,7 +8,7 @@ import { createLogger } from 'redux-logger';
 import promiseMiddleware from 'redux-promise-middleware';
 import thunk from 'redux-thunk';
 import { createBrowserHistory } from 'history'
-import { connectRouter, routerMiddleware } from 'connected-react-router'
+import { connectRouter } from 'connected-react-router'
 
 import './index.css';
 import App from './containers/App';
