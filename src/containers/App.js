@@ -9,11 +9,10 @@ class App extends Component {
   
   constructor(props){
     super(props);
+    console.log("in constructor");
     this.state = { toDashboard: false };
   }
-  
-  
-  
+
   render() {
     if (this.state.toDashboard === true) {
           return <Redirect to='/dashboard' />
