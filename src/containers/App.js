@@ -13,7 +13,8 @@ class App extends Component {
   }
   
   componentDidMount() {
-
+    const { search } = this.props;
+    search(this.props.router.location.pathname.substring(1));
   }
   
   handleChange(event) {
@@ -22,14 +23,29 @@ class App extends Component {
     this.props.history.push('/' + event.target.value)
   }
   
+  ratingToText(rating) {
+    if (rating < 3) {
+      return "negligible";
+    } else if (rating < 5) {
+      return "low";
+    } else if (rating < 7) {
+      return "medium"
+    } else if (rating < 9) {
+      return "high"
+    } else {
+      return "very high"
+    }
+  }
+  
   render() {
     return (
       <div>
+        
         <input type="text" value={this.props.router.location.pathname.substring(1)} onChange={this.handleChange} />
         <ul>
           {this.props.searchResults.results.map((result) =>
-            <li key={result.name + result.score + result. }>
-              {result.name}
+            <li key={Math.random()}>
+              {this.ratingToText(result.rating)}, {result.name}
             </li>
           )}
     </ul>
