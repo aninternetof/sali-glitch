@@ -40,22 +40,22 @@ td {
   background-color: fuchsia; 
 }
 
+.result0 {
+ font-size: 24px; 
+}
+
 .result1 {
- font-size: 2rem; 
+ font-size: 18px; 
 }
 
 .result2 {
- font-size: 1.5rem; 
+ font-size: 14px; 
 }
 
 .result3 {
- font-size: 1rem; 
+ font-size: 12px; 
 }
 
 .result4 {
- font-size: 0.75rem; 
-}
-
-.result5 {
- font-size: 0.5rem; 
+ font-size: 10px; 
 }
