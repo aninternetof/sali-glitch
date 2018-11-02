@@ -15,14 +15,13 @@ class App extends Component {
 
   render() {
     if (this.state.toDashboard === true) {
+          this.setState(() => ({toDashboard: false}));
           return <Redirect to='/dashboard' />
     }
     return (
       <div>
-        <button onClick={this.props.setTest} >console.log(actions);</button>
-        <button onClick={() => {this.props.navigate('/home')}} >Go</button>
+        <h1>{this.props.router.location.pathname}</h1>
         <button onClick={() => {this.setState(() => ({toDashboard: true}))}}>Redirect</button>
-        <Link to="/about">About</Link>
       </div>
     );
   }
