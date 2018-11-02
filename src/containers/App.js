@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <div>
         <button onClick={this.props.setTest} >console.log(actions);</button>
-        <button onClick={this.handleClick} >Go</button>
+        <button onClick={() => {this.props.navigate('/home')}} >Go</button>
         <Link to="/about">About</Link>
       </div>
     );
