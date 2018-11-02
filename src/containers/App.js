@@ -42,20 +42,22 @@ class App extends Component {
         <h1>Is a </h1>
         <input className="input" type="text" value={this.props.router.location.pathname.substring(1)} onChange={this.handleChange} />
         <h1>high in salicylates?</h1>
-        <table>
-          <tbody>
-            {this.props.searchResults.results.map((result) =>
-              <tr key={Math.random()}>
-                <td>
-                  {this.ratingToText(result.rating)}
-                </td>    
-                <td>
-                  {result.name}
-                </td> 
-              </tr>
-            )}
-          </tbody>
-        </table>
+        <div className="results">
+          <table>
+            <tbody>
+              {this.props.searchResults.results.map((result) =>
+                <tr key={Math.random()}>
+                  <td className="rating`${result.rating}`">
+                    {this.ratingToText(result.rating)}
+                  </td>    
+                  <td>
+                    {result.name}
+                  </td> 
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
         <p>This application has not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
       </div>
     );

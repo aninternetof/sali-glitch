@@ -11,3 +11,11 @@
 .input {
   max-width: 200px;
 }
+
+td { 
+  padding: 10px;
+}
+
+rating0, rating1 {
+  background-color: green; 
+}
