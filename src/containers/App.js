@@ -58,7 +58,9 @@ class App extends Component {
             </tbody>
           </table>
         </div>
-        <p>This application has not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.</p>
+        <p>This application has not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
+          The data source is <a href="https://atpscience.com/salicylate-foods-sensitivity-intolerances-and-food-list/">just stuff on the internet</a>.</p>
+        <p>Questions? <a href="https://twitter.com/aninternetof">Message me on Twitter.</a></p>
       </div>
     );
   }
