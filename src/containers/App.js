@@ -36,6 +36,10 @@ class App extends Component {
     }
   }
   
+  getResults(props) {
+    return <p>Waking up the database...</p>
+  }
+  
   render() {
     return (
       <div className="container">
@@ -43,6 +47,7 @@ class App extends Component {
         <input className="input" type="text" value={this.props.router.location.pathname.substring(1)} onChange={this.handleChange} />
         <h1>high in salicylates?</h1>
         <div className="results">
+          {this.getResults()}
           <table>
             <tbody>
               {this.props.searchResults.results.map((result, count) =>
