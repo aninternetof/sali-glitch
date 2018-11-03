@@ -37,7 +37,26 @@ class App extends Component {
   }
   
   getResults(props) {
-    return <p>Waking up the database...</p>
+    if (props.searchResults.isFetching) {
+      return <p>Loading...</p>
+    } else {
+      return (
+        <table>
+          <tbody>
+            {this.props.searchResults.results.map((result, count) =>
+              <tr key={Math.random()}>
+                <td className={`rating${result.rating} result${count}`}>
+                  {this.ratingToText(result.rating)}
+                </td>    
+                <td className={`result${count}`}>
+                  {result.name}
+                </td> 
+              </tr>
+            )}
+          </tbody>
+        </table>
+      )
+    }
   }
   
   render() {
@@ -47,21 +66,7 @@ class App extends Component {
         <input className="input" type="text" value={this.props.router.location.pathname.substring(1)} onChange={this.handleChange} />
         <h1>high in salicylates?</h1>
         <div className="results">
-          {this.getResults()}
-          <table>
-            <tbody>
-              {this.props.searchResults.results.map((result, count) =>
-                <tr key={Math.random()}>
-                  <td className={`rating${result.rating} result${count}`}>
-                    {this.ratingToText(result.rating)}
-                  </td>    
-                  <td className={`result${count}`}>
-                    {result.name}
-                  </td> 
-                </tr>
-              )}
-            </tbody>
-          </table>
+          {this.getResults(this.props)}
         </div>
         <p>This application has not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.
           The data source is <a href="https://atpscience.com/salicylate-foods-sensitivity-intolerances-and-food-list/">just stuff on the internet</a>.</p>
