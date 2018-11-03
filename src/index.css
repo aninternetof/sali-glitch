@@ -4,8 +4,10 @@
   margin-top: 100px;
 }
 
-@media handheld {
-    /* applies to mobiles in landscape mode */
+@media only screen and (max-width: 600px) {
+    .container {
+      margin-top: 10px;
+    }
 }
 
 .results {
