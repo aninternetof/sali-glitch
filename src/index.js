@@ -39,7 +39,7 @@ ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <Switch>
-        <Route path="/" component={App} />
+        <Route path="/:name?" component={App} />
       </Switch>
     </ConnectedRouter>
   </Provider>,
