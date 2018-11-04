@@ -42,21 +42,24 @@ class App extends Component {
   
   ratingToColor(rating) {
     if (rating < 3) {
-      return "wheat";
+      return "rgba(245, 222, 179, 0.2)";
     } else if (rating < 5) {
-      return "green";
+      return "rgba(0, 255, 0, 0.2)";
     } else if (rating < 7) {
-      return "yellow"
+      return "rgba(255, 255, 0, 0.2)";
     } else if (rating < 9) {
-      return "red"
+      return "rgba(255, 0, 0, 0.2)";
     } else {
-      return "fuschia"
+      return "rgba(255, 0, 255, 0.2)";
     }
   }
   
   getResults(props) {
     if (props.searchResults.isFetching) {
       return <p>Loading...</p>
+    } else if (props.searchResults.results.length === 0) {
+      document.body.style.backgroundColor = "white";
+      return <p></p>
     } else {
       document.body.style.backgroundColor = this.ratingToColor(props.searchResults.results[0].rating);
       return (
