@@ -22,17 +22,35 @@ class App extends Component {
     this.props.history.push('/' + event.target.value)
   }
   
+  componentWillUpdate() {
+    
+  }
+  
   ratingToText(rating) {
-    if (rating < 3) {
+    if (rating < 2) {
       return "negligible";
-    } else if (rating < 5) {
+    } else if (rating < 4) {
       return "low";
-    } else if (rating < 7) {
+    } else if (rating < 6) {
       return "medium"
-    } else if (rating < 9) {
+    } else if (rating < 8) {
       return "high"
     } else {
       return "very high"
+    }
+  }
+  
+  ratingToColor(rating) {
+    if (rating < 3) {
+      return "wheat";
+    } else if (rating < 5) {
+      return "green";
+    } else if (rating < 7) {
+      return "yellow"
+    } else if (rating < 9) {
+      return "red"
+    } else {
+      return "fuschia"
     }
   }
   
@@ -40,6 +58,7 @@ class App extends Component {
     if (props.searchResults.isFetching) {
       return <p>Loading...</p>
     } else {
+      document.body.style.backgroundColor = this.ratingToColor(props.searchResults.results[0].rating);
       return (
         <table>
           <tbody>

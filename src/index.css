@@ -27,23 +27,19 @@ td {
   background-color: wheat; 
 }
 
-.rating1, .rating2 {
+.rating2, .rating3 {
   background-color: green; 
 }
 
-.rating3, .rating4 {
+.rating4, .rating5 {
   background-color: yellow; 
 }
 
-.rating5, .rating6 {
-  background-color: orange; 
-}
-
-.rating7, .rating8 {
+.rating6, .rating7 {
   background-color: red; 
 }
 
-.rating9, .rating10 {
+.rating8, .rating9 {
   background-color: fuchsia; 
 }
 
